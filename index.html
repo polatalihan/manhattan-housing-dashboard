@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Manhattan Housing Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Interactive Manhattan housing composition map by block." />
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://basemaps.cartocdn.com">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Manhattan Housing Dashboard</div>
+        <h1>Housing Composition by Block</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="resetView" class="btn secondary">Reset</button>
+        <a class="btn primary" href="data/manhattan_blocks.geojson" download>Download data</a>
+      </div>
+    </header>
+
+    <main>
+      <aside class="sidebar" aria-label="Map controls and summary">
+        <section class="intro-card">
+          <p>
+            Explore Manhattan blocks by housing composition. Pie markers represent residential blocks;
+            marker size reflects total mapped units and adjusts with zoom.
+          </p>
+        </section>
+
+        <section class="summary-card">
+          <div class="summary-label">Visible mapped units</div>
+          <div id="visibleUnits" class="summary-value">—</div>
+          <div id="visibleContext" class="summary-context">Across visible residential blocks</div>
+        </section>
+
+        <section class="controls-card">
+          <label for="searchBox">Search</label>
+          <input id="searchBox" type="text" placeholder="Block, OBJECTID, or CD..." />
+
+          <label for="cdFilter">Community District</label>
+          <select id="cdFilter">
+            <option value="all">All Community Districts</option>
+          </select>
+
+          <div class="toggles">
+            <label class="toggle">
+              <input id="togglePie" type="checkbox" checked />
+              <span>Pie markers</span>
+            </label>
+
+            <label class="toggle">
+              <input id="togglePolygons" type="checkbox" checked />
+              <span>Block outlines</span>
+            </label>
+          </div>
+        </section>
+
+        <section id="cdPanel" class="district-card is-hidden">
+          <div class="section-heading">
+            <div>
+              <h2 id="cdTitle">Community District</h2>
+              <p id="cdSubtitle">Unit breakdown</p>
+            </div>
+          </div>
+
+          <div class="district-grid">
+            <div id="cdPieChart" class="district-chart"></div>
+            <div id="cdBreakdown" class="district-breakdown"></div>
+          </div>
+
+          <div class="district-metrics">
+            <div>
+              <span id="cdResidentialBlocks">—</span>
+              <label>residential blocks</label>
+            </div>
+            <div>
+              <span id="cdAvgUnits">—</span>
+              <label>avg. units/block</label>
+            </div>
+          </div>
+        </section>
+
+        <section class="legend-card">
+          <h2>Legend</h2>
+          <div class="legend-row"><span class="swatch income"></span>Income restricted, not NYCHA</div>
+          <div class="legend-row"><span class="swatch rent"></span>Rent stabilized, not income restricted</div>
+          <div class="legend-row"><span class="swatch nycha"></span>Income restricted, NYCHA</div>
+          <div class="legend-row"><span class="swatch other"></span>Other units, mostly market rate</div>
+        </section>
+
+        <section class="note-card">
+          Zero-unit blocks are hidden. Update the map by replacing
+          <code>data/manhattan_blocks.geojson</code> with a new file using the same field names.
+        </section>
+      </aside>
+
+      <section class="map-shell" aria-label="Interactive map">
+        <div id="map"></div>
+        <div id="loading" class="loading">Loading housing data…</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
