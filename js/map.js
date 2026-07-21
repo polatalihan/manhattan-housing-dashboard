@@ -497,7 +497,7 @@ async function loadData() {
     }).getBounds();
 
     if (state.baseBounds.isValid()) {
-      map.fitBounds(state.baseBounds.pad(0.08));
+      map.fitBounds(state.baseBounds.pad(0.03));
     }
 
     populateCdFilter();
