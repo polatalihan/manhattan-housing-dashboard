@@ -502,7 +502,7 @@ async function loadData() {
     requestAnimationFrame(() => {
   map.invalidateSize(false);
 
-  map.setView([40.7831, -73.9712], 13, {
+  map.setView([40.7831, -73.9712], 11, {
     animate: false
   });
 });
