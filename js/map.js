@@ -498,6 +498,14 @@ async function loadData() {
 
     populateCdFilter();
     render();
+    
+    requestAnimationFrame(() => {
+  map.invalidateSize(false);
+
+  map.setView([40.7831, -73.9712], 13, {
+    animate: false
+  });
+});
   } catch (error) {
     console.error(error);
     loading.textContent = "Could not load data/manhattan_blocks.geojson. Use a local server or GitHub Pages.";
