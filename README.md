@@ -2,18 +2,19 @@
 
 An interactive web map showing Manhattan housing composition by block.
 
-The map uses Leaflet, D3, and a CARTO Dark Matter basemap. It is designed as a lightweight static web application that can be hosted on GitHub Pages.
+The application is a lightweight static web application built with Leaflet, D3.js, and the CARTO Dark Matter basemap. Housing data is compiled from multiple public datasets, processed using Python and ArcGIS Pro, and exported as a GeoJSON dataset for visualization. The web application was developed using JavaScript with AI-assisted coding workflows.
 
 ## Features
 
-- One marker per residential Manhattan block
-- Zero-unit blocks are hidden
-- Marker size scales by total mapped units and zoom level
-- Low zoom levels show proportional circles; closer zoom levels show pie markers
-- Community District filter
-- Districtwide unit breakdown chart and percentages
-- Downloadable GeoJSON data file
-- Updatable data architecture
+- Interactive map of residential Manhattan blocks
+- One marker per residential block
+- Blocks with zero residential units are automatically hidden
+- Marker size scales by total residential units and map zoom level
+- Proportional circles at small scales that transition to pie charts as users zoom in
+- Community District / Neighborhood Tabulation Area filtering
+- District-wide housing composition charts and percentages
+- Downloadable GeoJSON dataset
+- Easily updateable data architecture
 
 ## Housing categories
 
@@ -68,6 +69,16 @@ Once published through GitHub Pages, no local server is needed.
 4. Select the `main` branch and `/root`.
 5. Open the published URL.
 
+## Data Sources
+
+The housing dataset integrates information from multiple New York City open data sources, including:
+
+- MapPLUTO (Residential Unit Count and NYCHA Owned Units)
+- Affordable Housing Production by Building, NYC Department of Housing Preservation & Development (HPD)
+- [Advertised Lotteries on Housing Connect By Building](https://data.cityofnewyork.us/Housing-Development/Advertised-Lotteries-on-Housing-Connect-By-Buildin/nibs-na6y/about_data), NYC Department of Housing Preservation & Development (HPD)
+- NYC Property Tax Bills (DHCR Rent Stabilization Data)
+
+These datasets are processed and combined into a block-level GeoJSON for visualization.
 ## Suggested license
 
 MIT License for the code, with a data-source note in the README.
