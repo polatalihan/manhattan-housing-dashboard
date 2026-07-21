@@ -496,10 +496,6 @@ async function loadData() {
       features: state.residentialFeatures
     }).getBounds();
 
-    if (state.baseBounds.isValid()) {
-      map.fitBounds(state.baseBounds.pad(0.03));
-    }
-
     populateCdFilter();
     render();
   } catch (error) {
