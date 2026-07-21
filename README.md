@@ -79,8 +79,3 @@ The housing dataset integrates information from multiple New York City open data
 - [NYC Property Tax Bills](https://github.com/polatalihan/Rent-Stabilized-Data-NYC)
 
 These datasets are processed and combined into a block-level GeoJSON for visualization.
-## Suggested license
-
-MIT License for the code, with a data-source note in the README.
-
-Housing data should be attributed to its underlying public data sources, such as NYC Open Data, HPD, DHCR/property tax bill data, NYCHA, and MapPLUTO, as applicable.
