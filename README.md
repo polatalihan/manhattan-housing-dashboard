@@ -76,7 +76,7 @@ The housing dataset integrates information from multiple New York City open data
 - [MapPLUTO](https://www.nyc.gov/content/planning/pages/resources/datasets/mappluto-pluto-change)
 - [Affordable Housing Production by Building](https://data.cityofnewyork.us/Housing-Development/Affordable-Housing-Production-by-Building/hg8x-zxpr/about_data), NYC Department of Housing Preservation & Development (HPD)
 - [Advertised Lotteries on Housing Connect By Building](https://data.cityofnewyork.us/Housing-Development/Advertised-Lotteries-on-Housing-Connect-By-Buildin/nibs-na6y/about_data), NYC Department of Housing Preservation & Development (HPD)
-- [NYC Property Tax Bills] (DHCR Rent Stabilization Data)
+- [NYC Property Tax Bills](https://github.com/polatalihan/Rent-Stabilized-Data-NYC)
 
 These datasets are processed and combined into a block-level GeoJSON for visualization.
 ## Suggested license
