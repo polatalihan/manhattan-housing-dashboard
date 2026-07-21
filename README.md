@@ -1,6 +1,6 @@
 # Manhattan Housing Explorer
 
-An interactive web map showing Manhattan housing composition by block.
+An [interactive web map](https://polatalihan.github.io/manhattan-housing-dashboard/v2/) showing Manhattan housing composition by block.
 
 The application is a lightweight static web application built with Leaflet, D3.js, and the CARTO Dark Matter basemap. Housing data is compiled from multiple public datasets, processed using Python and ArcGIS Pro, and exported as a GeoJSON dataset for visualization. The web application was developed using JavaScript with AI-assisted coding workflows.
 
