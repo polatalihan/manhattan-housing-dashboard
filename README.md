@@ -2,7 +2,7 @@
 
 An interactive web map showing Manhattan housing composition by block.
 
-The map uses Leaflet, D3, and a CARTO Dark Matter basemap. It is designed as a lightweight static web application that can be hosted for free on GitHub Pages.
+The map uses Leaflet, D3, and a CARTO Dark Matter basemap. It is designed as a lightweight static web application that can be hosted on GitHub Pages.
 
 ## Features
 
@@ -12,7 +12,6 @@ The map uses Leaflet, D3, and a CARTO Dark Matter basemap. It is designed as a l
 - Low zoom levels show proportional circles; closer zoom levels show pie markers
 - Community District filter
 - Districtwide unit breakdown chart and percentages
-- Search by block, OBJECTID, or Community District
 - Downloadable GeoJSON data file
 - Updatable data architecture
 
