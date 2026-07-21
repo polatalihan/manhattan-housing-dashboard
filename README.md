@@ -79,3 +79,10 @@ The housing dataset integrates information from multiple New York City open data
 - [NYC Property Tax Bills](https://github.com/polatalihan/Rent-Stabilized-Data-NYC)
 
 These datasets are processed and combined into a block-level GeoJSON for visualization.
+
+## Further Reading
+## Additional Reading
+
+A detailed discussion of the methodology, housing categories, and data sources is available in:
+[Understanding New York City's Housing Data Landscape: A Block-by-Block View]
+
