@@ -3,12 +3,22 @@ const state = { allFeatures: [], residentialFeatures: [], p95Total: 1, baseBound
 
 const map = L.map("map", { center: [40.7831, -73.9712], zoom: 12, preferCanvas: false, zoomControl: true });
 
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-  subdomains: "abcd",
-  maxZoom: 20,
-  crossOrigin: true
-}).addTo(map);
+L.tileLayer(
+  "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+  {
+    attribution: "Tiles &copy; Esri",
+    maxZoom: 16,
+    crossOrigin: true
+  }
+).addTo(map);
+
+L.tileLayer(
+  "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+  {
+    maxZoom: 16,
+    crossOrigin: true
+  }
+).addTo(map);
 
 const polygonLayer = L.geoJSON(null, {
   style: { color: "rgba(255,250,240,.42)", weight: .65, opacity: .85, fillColor: "rgba(255,255,255,.01)", fillOpacity: .01 }
